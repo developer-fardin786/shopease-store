@@ -1,0 +1,258 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+
+.home-page {
+  width: 95%;
+  max-width: 1200px;
+  margin: auto;
+  padding-top: 1em;
+}
+
+/* Navbar */
+.navbar {
+  width: 100%;
+  background-color: #2a55e5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 1.5em;
+  color: white;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo {
+  font-size: 1.6em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+/* Hamburger Icon - Hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  background-color: transparent;
+  transition: background 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Search Box */
+.search-box input {
+  height: 35px;
+  width: 230px;
+  padding: 0 10px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  font-size: 0.95em;
+  background-color: #fff;
+}
+
+/* Product Grid */
+.product-container {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 2em;
+}
+
+/* Product Card */
+.product-card {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 8px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: rgba(0, 0, 0, 0.2) 0 6px 20px;
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 180px;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin: auto;
+}
+
+.product-card h4 {
+  color: #222;
+  margin: 10px 0 5px;
+  font-size: 1.1em;
+}
+
+.product-card h5 {
+  margin: 4px 0;
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* No Products Found Message */
+.result-not-found {
+  text-align: center;
+  font-size: 1.5em;
+  color: #999;
+  padding: 2em;
+}
+
+/* Footer */
+.footer {
+  background-color: #2a55e5;
+  color: white;
+  padding: 2em 1em 1em;
+  margin-top: 3em;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2em;
+}
+
+.footer-section {
+  flex: 1 1 200px;
+}
+
+.footer-section h2,
+.footer-section h3 {
+  margin-bottom: 0.5em;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: #ffd700;
+}
+
+.footer-section p,
+.footer-section i {
+  margin-bottom: 0.5em;
+  font-size: 0.95em;
+}
+
+.footer-section.social a {
+  margin-right: 12px;
+  font-size: 1.2em;
+  color: white;
+  transition: color 0.3s;
+}
+
+.footer-section.social a:hover {
+  color: #ffcc00;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 1em;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.9em;
+}
+
+/* Responsive Styles */
+
+/* Mobile (< 768px) */
+@media (max-width: 767px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #2a55e5;
+    padding: 1em 0;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 20px;
+    border-radius: 0;
+  }
+
+  .search-box {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+}
+
+/* Tablet (768px to 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .search-box input {
+    width: 180px;
+  }
+
+  .product-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* Laptop/Desktop (>= 1024px) */
+@media (min-width: 1024px) {
+  .search-box input {
+    width: 230px;
+  }
+
+  .product-container {
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  }
+}
